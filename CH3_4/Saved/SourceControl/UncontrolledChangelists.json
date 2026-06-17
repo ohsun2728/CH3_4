@@ -1,0 +1,14 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"C:/Unreal Project/CH3_4/CH3_4/Content/Blueprints/BP_CH3_4_Player.uasset",
+				"C:/Unreal Project/CH3_4/CH3_4/Content/Maps/CH3_4_Level.umap",
+				"C:/Unreal Project/CH3_4/CH3_4/Content/Inputs/IMC_Player.uasset"
+			]
+		}
+	]
+}
