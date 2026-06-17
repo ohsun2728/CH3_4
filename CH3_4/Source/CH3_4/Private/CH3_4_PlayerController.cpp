@@ -1,31 +1,41 @@
-
 #include "CH3_4_PlayerController.h"
-
 #include "EnhancedInputSubsystems.h"
-// Enhanced Input System의 Local Player Subsystem을 사용하기 위해 포함
+#include "InputMappingContext.h"
+#include "InputAction.h"
+#include "UObject/ConstructorHelpers.h"
 
 ACH3_4_PlayerController::ACH3_4_PlayerController()
-	:InputMappingContext(nullptr),
-	MoveAction(nullptr),
-	LookAction(nullptr)
 {
+	static ConstructorHelpers::FObjectFinder<UInputMappingContext> IMC_Asset(TEXT("/Game/Inputs/IMC_Player.IMC_Player"));
+	if (IMC_Asset.Succeeded())
+	{
+		InputMappingContext = IMC_Asset.Object;
+	}
+
+	static ConstructorHelpers::FObjectFinder<UInputAction> IA_Move_Asset(TEXT("/Game/Inputs/IA_Move.IA_Move"));
+	if (IA_Move_Asset.Succeeded())
+	{
+		MoveAction = IA_Move_Asset.Object;
+	}
+
+	static ConstructorHelpers::FObjectFinder<UInputAction> IA_Look_Asset(TEXT("/Game/Inputs/IA_Look.IA_Look"));
+	if (IA_Look_Asset.Succeeded())
+	{
+		LookAction = IA_Look_Asset.Object;
+	}
 }
 
 void ACH3_4_PlayerController::BeginPlay()
 {
 	Super::BeginPlay();
 
-	// 현재 PlayerController에 연결된 Local Player 객체를 가져옴
 	if (ULocalPlayer* LocalPlayer = GetLocalPlayer())
 	{
-		// Local Player에서 EnhancedInputLocalPlayerSubsystem을 획득
 		if (UEnhancedInputLocalPlayerSubsystem* Subsystem
 			= LocalPlayer->GetSubsystem<UEnhancedInputLocalPlayerSubsystem>())
 		{
 			if (InputMappingContext)
 			{
-				// Subsystem을 통해 할당한 IMC를 활성화
-				// 우선순위는 0이 가장 높은 우선 순위
 				Subsystem->AddMappingContext(InputMappingContext, 0);
 			}
 		}

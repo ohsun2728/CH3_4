@@ -8,7 +8,6 @@ class USpringArmComponent;      // 스프링 암 컴포넌트 전방 선언
 class UCameraComponent; // 카메라 컴포넌트 전방 선언
 class UCapsuleComponent; // 캡슐 컴포넌트 전방 선언
 class USkeletalMeshComponent; // 스켈레탈 메쉬 컴포넌트 전방 선언
-class UFloatingPawnMovement;
 
 struct FInputActionValue;	// Enhanced Input에서 액션 값을 받을 때 사용하는 구조체
 
@@ -37,6 +36,10 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Camera")
 	UCameraComponent* CameraComp;
 
+	// 이동 속도
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement")
+	float MoveSpeed = 500.0f;
+
 	virtual void BeginPlay() override;
 
 	// IA_Move와 IA_Look의 함수 원형
@@ -46,8 +49,23 @@ protected:
 	UFUNCTION()
 	void Look(const FInputActionValue& value);
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement")
-	float MoveSpeed = 500.0f;
+	// IMC
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Input")
+	class UInputMappingContext* InputMappingContext;
+
+	// IA_Move
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Input")
+	class UInputAction* MoveAction;
+
+	// IA_Look
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Input")
+	class UInputAction* LookAction;
+
+	// 카메라 회전 속도
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Input")
+	float RotationSpeed = 90.0f;
+
+
 public:
 	virtual void Tick(float DeltaTime) override;
 
