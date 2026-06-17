@@ -29,7 +29,7 @@ protected:
 	USkeletalMeshComponent* SkeletalMeshComp;
 
 	// 스프링 암 컴포넌트
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Camara")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Camera")
 	USpringArmComponent* SpringArmComp;
 
 	// 카메라 컴포넌트
@@ -39,6 +39,10 @@ protected:
 	// 이동 속도
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement")
 	float MoveSpeed = 500.0f;
+
+	// 카메라 회전 속도
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement")
+	float RotationSpeed = 90.0f;
 
 	virtual void BeginPlay() override;
 
@@ -61,9 +65,7 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Input")
 	class UInputAction* LookAction;
 
-	// 카메라 회전 속도
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Input")
-	float RotationSpeed = 90.0f;
+	
 
 
 public:

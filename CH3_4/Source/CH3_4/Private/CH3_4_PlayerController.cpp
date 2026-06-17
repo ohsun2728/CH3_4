@@ -38,6 +38,6 @@ void ACH3_4_PlayerController::BeginPlay()
 			{
 				Subsystem->AddMappingContext(InputMappingContext, 0);
 			}
-		}
+		} 
 	}
 }
