@@ -53,9 +53,6 @@ void ACH3_4_Player::Move(const FInputActionValue& value)
 	const FVector2D MoveInput = value.Get<FVector2D>();
 	float DeltaTime = GetWorld()->GetDeltaSeconds();
 
-	// 언리얼 로컬 좌표계에 맞춰 축 스왑
-	// X(Forward) = MoveInput.Y (W/S)
-	// Y(Right)   = MoveInput.X (A/D)
 	FVector DeltaLocation = FVector(MoveInput.Y, MoveInput.X, 0.0f) * MoveSpeed * DeltaTime;
 
 	AddActorLocalOffset(DeltaLocation, false);
