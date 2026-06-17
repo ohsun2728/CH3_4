@@ -18,8 +18,6 @@ ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_UCapsuleComponent_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_USkeletalMeshComponent_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
-ENHANCEDINPUT_API UClass* Z_Construct_UClass_UInputAction_NoRegister();
-ENHANCEDINPUT_API UClass* Z_Construct_UClass_UInputMappingContext_NoRegister();
 ENHANCEDINPUT_API UScriptStruct* Z_Construct_UScriptStruct_FInputActionValue();
 UPackage* Z_Construct_UPackage__Script_CH3_4();
 // End Cross Module References
@@ -213,36 +211,6 @@ struct Z_Construct_UClass_ACH3_4_Player_Statics
 		{ "ToolTip", "\xec\xb9\xb4\xeb\xa9\x94\xeb\x9d\xbc \xed\x9a\x8c\xec\xa0\x84 \xec\x86\x8d\xeb\x8f\x84" },
 #endif
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_InputMappingContext_MetaData[] = {
-		{ "Category", "Input" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "// IMC\n" },
-#endif
-		{ "ModuleRelativePath", "Public/CH3_4_Player.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "IMC" },
-#endif
-	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MoveAction_MetaData[] = {
-		{ "Category", "Input" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "// IA_Move\n" },
-#endif
-		{ "ModuleRelativePath", "Public/CH3_4_Player.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "IA_Move" },
-#endif
-	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_LookAction_MetaData[] = {
-		{ "Category", "Input" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "// IA_Look\n" },
-#endif
-		{ "ModuleRelativePath", "Public/CH3_4_Player.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "IA_Look" },
-#endif
-	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_CapsuleComp;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_SkeletalMeshComp;
@@ -250,9 +218,6 @@ struct Z_Construct_UClass_ACH3_4_Player_Statics
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_CameraComp;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_MoveSpeed;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_RotationSpeed;
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_InputMappingContext;
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_MoveAction;
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_LookAction;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
@@ -271,9 +236,6 @@ const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACH3_4_Player_
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACH3_4_Player_Statics::NewProp_CameraComp = { "CameraComp", nullptr, (EPropertyFlags)0x00200800000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ACH3_4_Player, CameraComp), Z_Construct_UClass_UCameraComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CameraComp_MetaData), NewProp_CameraComp_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ACH3_4_Player_Statics::NewProp_MoveSpeed = { "MoveSpeed", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ACH3_4_Player, MoveSpeed), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MoveSpeed_MetaData), NewProp_MoveSpeed_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ACH3_4_Player_Statics::NewProp_RotationSpeed = { "RotationSpeed", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ACH3_4_Player, RotationSpeed), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_RotationSpeed_MetaData), NewProp_RotationSpeed_MetaData) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACH3_4_Player_Statics::NewProp_InputMappingContext = { "InputMappingContext", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ACH3_4_Player, InputMappingContext), Z_Construct_UClass_UInputMappingContext_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_InputMappingContext_MetaData), NewProp_InputMappingContext_MetaData) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACH3_4_Player_Statics::NewProp_MoveAction = { "MoveAction", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ACH3_4_Player, MoveAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MoveAction_MetaData), NewProp_MoveAction_MetaData) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACH3_4_Player_Statics::NewProp_LookAction = { "LookAction", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ACH3_4_Player, LookAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_LookAction_MetaData), NewProp_LookAction_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ACH3_4_Player_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACH3_4_Player_Statics::NewProp_CapsuleComp,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACH3_4_Player_Statics::NewProp_SkeletalMeshComp,
@@ -281,9 +243,6 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ACH3_4_Pl
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACH3_4_Player_Statics::NewProp_CameraComp,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACH3_4_Player_Statics::NewProp_MoveSpeed,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACH3_4_Player_Statics::NewProp_RotationSpeed,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACH3_4_Player_Statics::NewProp_InputMappingContext,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACH3_4_Player_Statics::NewProp_MoveAction,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACH3_4_Player_Statics::NewProp_LookAction,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ACH3_4_Player_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_ACH3_4_Player_Statics::DependentSingletons[])() = {
@@ -326,10 +285,10 @@ ACH3_4_Player::~ACH3_4_Player() {}
 struct Z_CompiledInDeferFile_FID_Unreal_Project_CH3_4_CH3_4_Source_CH3_4_Public_CH3_4_Player_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ACH3_4_Player, ACH3_4_Player::StaticClass, TEXT("ACH3_4_Player"), &Z_Registration_Info_UClass_ACH3_4_Player, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ACH3_4_Player), 3288965784U) },
+		{ Z_Construct_UClass_ACH3_4_Player, ACH3_4_Player::StaticClass, TEXT("ACH3_4_Player"), &Z_Registration_Info_UClass_ACH3_4_Player, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ACH3_4_Player), 2426949426U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Project_CH3_4_CH3_4_Source_CH3_4_Public_CH3_4_Player_h_1427730278(TEXT("/Script/CH3_4"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Project_CH3_4_CH3_4_Source_CH3_4_Public_CH3_4_Player_h_3414111117(TEXT("/Script/CH3_4"),
 	Z_CompiledInDeferFile_FID_Unreal_Project_CH3_4_CH3_4_Source_CH3_4_Public_CH3_4_Player_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Project_CH3_4_CH3_4_Source_CH3_4_Public_CH3_4_Player_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

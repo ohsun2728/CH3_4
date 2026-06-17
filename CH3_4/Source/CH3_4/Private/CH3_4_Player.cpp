@@ -1,5 +1,7 @@
 #include "CH3_4_Player.h"
 #include "CH3_4_PlayerController.h"
+
+#include "EnhancedInputComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "Camera/CameraComponent.h"
 #include "GameFramework/SpringArmComponent.h"

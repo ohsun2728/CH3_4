@@ -53,20 +53,6 @@ protected:
 	UFUNCTION()
 	void Look(const FInputActionValue& value);
 
-	// IMC
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Input")
-	class UInputMappingContext* InputMappingContext;
-
-	// IA_Move
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Input")
-	class UInputAction* MoveAction;
-
-	// IA_Look
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Input")
-	class UInputAction* LookAction;
-
-	
-
 
 public:
 	virtual void Tick(float DeltaTime) override;
